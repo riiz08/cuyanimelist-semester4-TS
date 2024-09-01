@@ -1,6 +1,6 @@
 import PopularList from "@/components/popular/popularlist";
 import Footer from "@/components/ui/footer";
-import HeaderContent from "@/components/ui/headercontent";
+import HeaderContent from "@/components/ui/header-content";
 import Navbar from "@/components/ui/navbar";
 import { getAnimeResponse } from "@/lib/utils";
 

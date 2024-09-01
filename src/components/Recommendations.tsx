@@ -15,8 +15,10 @@ const RecommendationsList = ({ api }: any) => {
                 }}
                 className="w-40 md:w-48 h-80 bg-cover bg-no-repeat bg-center relative hover:scale-105"
               >
-                <CardFooter className="absolute font-bold text-accent bg-gradient-to-t from-primary w-full rounded-lg to-transparent bottom-0">
-                  {anime.title}
+                <CardFooter className="px-0">
+                  <p className="absolute px-2 rounded-md w-full font-bold text-accent shadow-md max-w-xs text-nowrap bg-gradient-to-t from-primary to-trasnparent bottom-0 text-ellipsis overflow-hidden">
+                    {anime.title}
+                  </p>
                 </CardFooter>
               </Card>
             </Link>

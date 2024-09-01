@@ -14,3 +14,9 @@ export interface PaginationAnime {
   page: number;
   setPage: React.Dispatch<React.SetStateAction<number>>;
 }
+
+export interface CollectionType {
+  anime_id: string;
+  anime_name: string;
+  anime_image: string;
+}

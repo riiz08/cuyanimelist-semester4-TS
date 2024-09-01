@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Button } from "./button";
 import { Input } from "./input";
 import { Sheet, SheetContent, SheetTrigger } from "./sheet";
-import InputSearch from "./inputsearch";
+import InputSearch from "./input-search";
 import { getServerSession } from "next-auth";
 import { authOptions, authSession } from "@/lib/auth";
 import DialogSignOut from "./alert-dialog-signout";
