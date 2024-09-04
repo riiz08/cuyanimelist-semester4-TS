@@ -3,10 +3,12 @@
 import { CollectionType } from "@/types/anime";
 import { Button } from "./button";
 import { useToast } from "./use-toast";
+import { useRouter } from "next/navigation";
 
 const HandleAddCollection = (props: CollectionType) => {
   const { anime_name, anime_id, anime_image } = props;
   const { toast } = useToast();
+  const router = useRouter();
 
   const handle = async () => {
     const response = await fetch(
@@ -21,6 +23,7 @@ const HandleAddCollection = (props: CollectionType) => {
     );
 
     if (response.status === 200) {
+      router.refresh();
       return toast({
         title: "Yey! success added anime to collection",
         description: "Check your collection now!",

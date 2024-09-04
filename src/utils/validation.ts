@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { string, z } from "zod";
 
 // SIGN UP FORM SCHEMA
 export const signUpFormSchema = z
@@ -31,4 +31,9 @@ export const signInFormSchema = z.object({
       message: "Password must contain at least one uppercase letter",
     })
     .regex(/[0-9]/, { message: "Password must contain at least one number" }),
+});
+
+//COMMENT FORM SCHEMA
+export const commentFromSchema = z.object({
+  comment_text: string().max(160, { message: "Max character 160" }),
 });

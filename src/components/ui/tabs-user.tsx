@@ -1,8 +1,13 @@
 import { Card, CardContent, CardHeader, CardTitle } from "./card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./tabs";
 import Collection from "../Collection";
+import CommentDisplay from "./comment-display";
 
-const TabsUser = async () => {
+type Props = {
+  email: string;
+};
+
+const TabsUser = (props: Props) => {
   return (
     <Tabs defaultValue="collection" className="w-full justify-center">
       <TabsList className="grid w-full grid-cols-2">
@@ -25,7 +30,7 @@ const TabsUser = async () => {
             <CardTitle>Comment</CardTitle>
           </CardHeader>
           <CardContent>
-            <span>This comment tabs</span>
+            <CommentDisplay email={props.email} />
           </CardContent>
         </Card>
       </TabsContent>

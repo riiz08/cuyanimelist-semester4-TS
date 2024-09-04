@@ -18,7 +18,6 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
-  // Optional for WebAuthn support
   Authenticator Authenticator[]
   Collections   Collection[]
  
@@ -96,4 +95,15 @@ model Collection {
 
   @@unique([userId, anime_id])
   @@index([userId])
+}
+
+model Comment {
+  id               Int @id @default(autoincrement())
+  user_name        String
+  user_email       String
+  user_image       String
+  anime_id         String
+  comment_text     String
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
 }
