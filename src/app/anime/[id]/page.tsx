@@ -95,7 +95,7 @@ export default async function Page({ params }: Params) {
 
         <CommentDisplay animeId={anime.mal_id} />
 
-        <CommentInput animeId={anime.mal_id} />
+        <CommentInput animeId={anime.mal_id} animeName={anime.title} />
 
         <div>
           {anime.trailer.youtube_id ? (

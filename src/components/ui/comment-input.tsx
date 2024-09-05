@@ -4,12 +4,12 @@ import { useRef } from "react";
 import { Button } from "./button";
 import { Textarea } from "./textarea";
 import { useToast } from "./use-toast";
-import { authOptions, authSession } from "@/lib/auth";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 type Props = {
   animeId: string;
+  animeName: string;
 };
 
 const CommentInput = (props: Props) => {
@@ -33,11 +33,17 @@ const CommentInput = (props: Props) => {
     try {
       const raw = JSON.stringify({
         user_email: user?.email,
-        user_image: user?.image,
-        user_name: user?.name,
+        user_image:
+          user?.image === undefined
+            ? "/images/default-profile.jpg"
+            : user?.image,
+        user_name: user?.name === null ? "Guest" : user?.name,
         anime_id: String(props.animeId),
+        anime_name: props.animeName,
         comment_text: commentValue,
       });
+
+      console.log(raw);
 
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_API_USER}/comment`,
@@ -51,7 +57,7 @@ const CommentInput = (props: Props) => {
       );
 
       const result = await response.json();
-
+      console.log(result);
       if (!response.ok) {
         return toast({
           title: "Error",

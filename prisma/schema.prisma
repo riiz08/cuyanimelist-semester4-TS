@@ -103,6 +103,7 @@ model Comment {
   user_email       String
   user_image       String
   anime_id         String
+  anime_name       String
   comment_text     String
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt

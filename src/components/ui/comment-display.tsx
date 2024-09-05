@@ -4,14 +4,16 @@ import {
 } from "@/services/getCommentsResponse";
 import { Avatar, AvatarFallback, AvatarImage } from "./avatar";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "./card";
+import Link from "next/link";
 
 type Props = {
   animeId?: number | null;
   email?: string | null;
+  dashboard?: boolean;
 };
 
 const CommentDisplay = async (props: Props) => {
-  const { animeId, email } = props;
+  const { animeId, email, dashboard } = props;
   const comments = animeId
     ? await getCommentsResponseById(animeId)
     : await getCommentsResponseByEmail(String(email));
@@ -38,7 +40,16 @@ const CommentDisplay = async (props: Props) => {
           <CardContent>
             <p className="text-xs font-normal">{comment.comment_text}</p>
           </CardContent>
-          <CardFooter></CardFooter>
+          {dashboard ? (
+            <CardFooter>
+              <Link
+                href={`/anime/${animeId}`}
+                className="text-xs hover:text-primary hover:underline transition-all"
+              >
+                {comment.anime_name}
+              </Link>
+            </CardFooter>
+          ) : null}
         </Card>
       ))}
     </div>

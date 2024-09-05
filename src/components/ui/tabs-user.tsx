@@ -30,7 +30,7 @@ const TabsUser = (props: Props) => {
             <CardTitle>Comment</CardTitle>
           </CardHeader>
           <CardContent>
-            <CommentDisplay email={props.email} />
+            <CommentDisplay email={props.email} dashboard={true} />
           </CardContent>
         </Card>
       </TabsContent>

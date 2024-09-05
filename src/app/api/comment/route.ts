@@ -35,13 +35,20 @@ export async function GET(req: NextRequest) {
 
 export async function POST(req: NextRequest) {
   try {
-    const { user_name, user_image, user_email, anime_id, comment_text } =
-      await req.json();
+    const {
+      user_name,
+      user_image,
+      user_email,
+      anime_id,
+      comment_text,
+      anime_name,
+    } = await req.json();
 
     const createComment = await prisma.comment.create({
       data: {
         comment_text,
         anime_id,
+        anime_name,
         user_email,
         user_image,
         user_name,
