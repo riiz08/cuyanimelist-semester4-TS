@@ -93,10 +93,13 @@ export default async function Page({ params }: Params) {
           <HeaderContent title="Comment" />
         </div>
 
-        <CommentDisplay animeId={anime.mal_id} />
+        <div className="mt-2">
+          <CommentDisplay animeId={anime.mal_id} />
+        </div>
 
-        <CommentInput animeId={anime.mal_id} animeName={anime.title} />
-
+        {session && (
+          <CommentInput animeId={anime.mal_id} animeName={anime.title} />
+        )}
         <div>
           {anime.trailer.youtube_id ? (
             <VideoPlayer youtubeId={anime.trailer.youtube_id} />

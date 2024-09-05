@@ -19,10 +19,10 @@ const CommentDisplay = async (props: Props) => {
     : await getCommentsResponseByEmail(String(email));
 
   return (
-    <div className="px-4 flex gap-4 w-full flex-wrap">
+    <div className="px-4 flex gap-4 w-full flex-wrap mt-4">
       {comments.map((comment: any) => (
         <Card
-          className="bg-white/20 backdrop-blur-sm max-w-sm mt-4"
+          className="bg-white/20 backdrop-blur-sm w-full md:max-w-sm md:mt-4"
           key={comment.id}
         >
           <CardHeader>
