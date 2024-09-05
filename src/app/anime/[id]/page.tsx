@@ -1,16 +1,16 @@
 import { Card, CardContent } from "@/components/ui/card";
 import CommentDisplay from "@/components/ui/comment-display";
 import CommentInput from "@/components/ui/comment-input";
-import Footer from "@/components/ui/footer";
+import Footer from "@/components/layout/footer";
 import HandleAddCollection from "@/components/ui/handle-add-collection";
 import HandleRemoveCollection from "@/components/ui/handle-remove-collection";
 import HeaderContent from "@/components/ui/header-content";
-import Navbar from "@/components/ui/navbar";
 import VideoPlayer from "@/components/ui/videoplayer";
 import { authSession } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { getAnimeResponse } from "@/lib/utils";
 import Image from "next/image";
+import Navbar from "@/components/layout/navbar";
 
 type Params = {
   params: Record<string, string>;
@@ -38,15 +38,16 @@ export default async function Page({ params }: Params) {
       <Navbar />
       <main className="py-20 md:pt-24">
         <div className="mt-4">
-          {!cekCollection ? (
-            <HandleAddCollection
-              anime_name={anime.title}
-              anime_id={anime.mal_id}
-              anime_image={anime.images.webp.large_image_url}
-            />
-          ) : (
-            <HandleRemoveCollection anime_id={anime.mal_id} />
-          )}
+          {session &&
+            (!cekCollection ? (
+              <HandleAddCollection
+                anime_name={anime.title}
+                anime_id={anime.mal_id}
+                anime_image={anime.images.webp.large_image_url}
+              />
+            ) : (
+              <HandleRemoveCollection anime_id={anime.mal_id} />
+            ))}
         </div>
         <Card className="bg-white/20 mx-4 py-4 backdrop-blur-sm">
           <CardContent className="px-6 flex gap-4 md:flex-row flex-col">

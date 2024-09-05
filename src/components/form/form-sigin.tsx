@@ -9,18 +9,17 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "./form";
-import { Input } from "./input";
-import { Button } from "./button";
+} from "../ui/form";
+import { Input } from "../ui/input";
+import { Button } from "../ui/button";
 import { FaGithub } from "react-icons/fa";
 import { useState } from "react";
-import { Separator } from "./separator";
+import { Separator } from "../ui/separator";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import { useToast } from "./use-toast";
+import { useToast } from "../ui/use-toast";
 import { signInFormSchema } from "@/utils/validation";
 import { SignInForm } from "@/types/user";
-import { prisma } from "@/lib/prisma";
 import Link from "next/link";
 
 const FormSignIn = () => {

@@ -1,7 +1,7 @@
+import Navbar from "@/components/layout/navbar";
 import { Card, CardFooter } from "@/components/ui/card";
-import Footer from "@/components/ui/footer";
+import Footer from "@/components/layout/footer";
 import HeaderContent from "@/components/ui/header-content";
-import Navbar from "@/components/ui/navbar";
 import { getAnimeResponse } from "@/lib/utils";
 import { Anime } from "@/types/anime";
 import Link from "next/link";

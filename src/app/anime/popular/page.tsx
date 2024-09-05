@@ -1,8 +1,8 @@
 import PopularList from "@/components/popular/popularlist";
-import Footer from "@/components/ui/footer";
+import Footer from "@/components/layout/footer";
 import HeaderContent from "@/components/ui/header-content";
-import Navbar from "@/components/ui/navbar";
 import { getAnimeResponse } from "@/lib/utils";
+import Navbar from "@/components/layout/navbar";
 
 const Page = async () => {
   const popular = await getAnimeResponse("top/anime");

@@ -1,11 +1,9 @@
+import { authSession } from "@/lib/auth";
 import Link from "next/link";
-import { Button } from "./button";
-import { Input } from "./input";
-import { Sheet, SheetContent, SheetTrigger } from "./sheet";
-import InputSearch from "./input-search";
-import { getServerSession } from "next-auth";
-import { authOptions, authSession } from "@/lib/auth";
-import DialogSignOut from "./alert-dialog-signout";
+import InputSearch from "../ui/input-search";
+import { Button } from "../ui/button";
+import DialogSignOut from "../ui/alert-dialog-signout";
+import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 
 const Navbar = async () => {
   const session = await authSession();

@@ -8,17 +8,17 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "./form";
+} from "../ui/form";
 import { signIn } from "next-auth/react";
-import { Input } from "./input";
+import { Input } from "../ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Button } from "./button";
+import { Button } from "../ui/button";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { useToast } from "./use-toast";
+import { useToast } from "../ui/use-toast";
 import { SignUpForm } from "@/types/user";
 import { signUpFormSchema } from "@/utils/validation";
-import { Separator } from "./separator";
+import { Separator } from "../ui/separator";
 import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
 

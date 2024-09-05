@@ -1,8 +1,8 @@
+import Navbar from "@/components/layout/navbar";
 import Popular from "@/components/Popular";
 import RecommendationsList from "@/components/Recommendations";
-import Footer from "@/components/ui/footer";
+import Footer from "@/components/layout/footer";
 import HeaderContent from "@/components/ui/header-content";
-import Navbar from "@/components/ui/navbar";
 import { getAnimeResponse, getNestedAnime, reproduce } from "@/lib/utils";
 
 export default async function Page() {
