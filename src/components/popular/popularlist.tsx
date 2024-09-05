@@ -2,25 +2,25 @@
 import { Anime } from "@/types/anime";
 import Link from "next/link";
 import { Card, CardFooter, CardHeader, CardTitle } from "../ui/card";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Pagination from "./pagination";
 import { getAnimeResponse } from "@/lib/utils";
 import SkeletonPopular from "./skeleton";
 
 const PopularList = () => {
   const [page, setPage] = useState(1);
-  const [api, setApi] = useState<Anime[]>([]);
+  const [api, setApi] = useState<Anime[]>();
   const [loading, setLoading] = useState(true);
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     const response = await getAnimeResponse("top/anime", `page=${page}`);
     setApi(response);
     setLoading(false);
-  };
+  }, [page]);
 
   useEffect(() => {
     fetchData();
-  }, [page]);
+  }, [fetchData]);
 
   return (
     <>

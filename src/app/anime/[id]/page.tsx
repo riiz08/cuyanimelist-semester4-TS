@@ -55,6 +55,7 @@ export default async function Page({ params }: Params) {
               alt={anime.title}
               width={400}
               height={350}
+              priority
               className="rounded-md md:w-[30%] mx-auto"
             />
             <div className="md:w-[50%]">

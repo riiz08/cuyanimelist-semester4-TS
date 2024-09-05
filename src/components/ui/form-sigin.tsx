@@ -137,7 +137,7 @@ const FormSignIn = () => {
         />
 
         <p className="text-sm mt-2">
-          Don't have account?{" "}
+          Don&apos;t have account?{" "}
           <Link href={"/auth/signup"} className="underline underline-offset-2">
             Sign up here
           </Link>
