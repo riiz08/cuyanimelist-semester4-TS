@@ -1,5 +1,5 @@
+import FormSignIn from "@/components/form/form-sigin";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import FormSignIn from "@/components/ui/form-sigin";
 
 export default function Page() {
   return (

@@ -1,4 +1,4 @@
-import Navbar from "@/components/ui/navbar";
+import Navbar from "@/components/layout/navbar";
 import ProfileUser from "@/components/ui/profile-user";
 import TabsUser from "@/components/ui/tabs-user";
 import { authSession } from "@/lib/auth";
