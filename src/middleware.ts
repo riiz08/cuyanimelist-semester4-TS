@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 export function middleware(req: NextRequest) {
-  const session = req.cookies.get("next-auth.session-token");
+  const session = req.cookies.get("__Secure-next-auth.session-token");
   if (!session && req.nextUrl.pathname.startsWith("/user")) {
     return NextResponse.redirect(new URL("/", req.url));
   }
